@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СТАВ — Барбершоп</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141F1B;
+    --surface:#1D2B25;
+    --gold:#C9A227;
+    --rust:#8B3A2B;
+    --cream:#EDE6D6;
+    --muted:#8FA098;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--cream);font-family:'Work Sans',sans-serif;line-height:1.5;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:900;letter-spacing:-0.01em;}
+  .stripe{
+    height:6px;
+    background:repeating-linear-gradient(135deg,var(--gold) 0 18px, var(--rust) 18px 36px, var(--cream) 36px 40px);
+  }
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 6vw;
+  }
+  .logo{font-family:'Fraunces',serif;font-weight:900;font-size:22px;letter-spacing:0.04em;}
+  nav a{color:var(--cream);text-decoration:none;margin-left:32px;font-size:15px;opacity:0.85;}
+  nav a:hover{opacity:1;}
+  .btn{
+    background:var(--gold);color:var(--bg);padding:12px 26px;border-radius:2px;
+    font-weight:600;text-decoration:none;font-size:15px;display:inline-block;
+    transition:transform .15s ease;
+    border-radius: 10%;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-outline{background:transparent;border:1.5px solid var(--gold);color:var(--gold);}
+  .hero{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;
+    padding:80px 6vw 100px;align-items:center;
+  }
+  .hero h1{font-size:clamp(40px,5.5vw,72px);line-height:1.02;}
+  .hero h1 span{color:var(--gold);}
+  .hero p{margin:24px 0 32px;color:var(--muted);font-size:18px;max-width:440px;}
+  .hero-visual{
+    aspect-ratio:4/5;background:var(--surface);border-radius:4px;position:relative;overflow:hidden;
+    border:1px solid rgba(201,162,39,0.2);
+  }
+  .hero-visual::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(135deg,transparent 0 40px, rgba(201,162,39,0.05) 40px 80px);
+  }
+  .hero-visual .num{
+    position:absolute;bottom:24px;left:24px;font-family:'Fraunces',serif;font-size:15px;color:var(--muted);
+  }
+  section{padding:80px 6vw;}
+  .eyebrow{color:var(--gold);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;}
+  .services{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(237,230,214,0.1);
+    border:1px solid rgba(237,230,214,0.1);
+  }
+  .service-card{background:var(--bg);padding:36px 28px;}
+  .service-card h3{font-size:22px;margin-bottom:10px;}
+  .service-card .price{color:var(--gold);font-size:28px;font-family:'Fraunces',serif;font-weight:600;margin:16px 0 10px;}
+  .service-card p{color:var(--muted);font-size:14px;}
+  .reviews{background:var(--surface);}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+  .review{padding:28px;border-left:2px solid var(--gold);}
+  .review p{color:var(--cream);font-size:15px;margin-bottom:14px;}
+  .review .name{color:var(--muted);font-size:13px;}
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .contact h2{font-size:36px;margin-bottom:20px;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  input{
+    background:var(--surface);border:1px solid rgba(237,230,214,0.15);color:var(--cream);
+    padding:14px 16px;font-size:15px;border-radius:2px;font-family:'Work Sans',sans-serif;
+  }
+  input::placeholder{color:var(--muted);}
+  footer{
+    border-top:1px solid rgba(237,230,214,0.1);padding:36px 6vw;
+    display:flex;justify-content:space-between;color:var(--muted);font-size:14px;flex-wrap:wrap;gap:12px;
+  }
+  @media(max-width:800px){
+    .hero{grid-template-columns:1fr;}
+    .services,.review-grid{grid-template-columns:1fr;}
+    .contact{grid-template-columns:1fr;}
+    nav{display:none;}
+  }
+</style>
+</head>
+<body>
+  <div class="stripe"></div>
+  <header>
+    <div class="logo">СТАВ</div>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a href="#contact" class="btn">Записаться</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Барбершоп на Ленина, 14</div>
+      <h1>Стрижка,<br>которая <span>держит форму</span></h1>
+      <p>Работаем с мужской стрижкой, бородой и укладкой как с ремеслом — без спешки и по записи, а не по очереди.</p>
+      <a href="#contact" class="btn">Записаться онлайн</a>
+    </div>
+    <div class="hero-visual"><span class="num">СТАВ · с 2019</span></div>
+  </div>
+
+  <section id="services">
+    <div class="eyebrow">Услуги</div>
+    <h2 style="font-size:36px;margin-bottom:8px;">Прайс без сюрпризов</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Стрижка</h3>
+        <div class="price">1 200 ₽</div>
+        <p>Машинка + ножницы, укладка, консультация по форме.</p>
+      </div>
+      <div class="service-card">
+        <h3>Борода</h3>
+        <div class="price">800 ₽</div>
+        <p>Оформление контура, бритьё опасной бритвой, уход.</p>
+      </div>
+      <div class="service-card">
+        <h3>Комплекс</h3>
+        <div class="price">1 800 ₽</div>
+        <p>Стрижка + борода + горячее полотенце. Выгода 200 ₽.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="eyebrow">Отзывы</div>
+    <h2 style="font-size:36px;">Что говорят клиенты</h2>
+    <div class="review-grid">
+      <div class="review">
+        <p>Хожу два года, ни разу не разочаровался. Мастер помнит, как я стригусь, даже без напоминаний.</p>
+        <div class="name">— Дмитрий</div>
+      </div>
+      <div class="review">
+        <p>Записался онлайн за минуту, пришёл — никакой очереди. Именно то, что нужно в будний день.</p>
+        <div class="name">— Артём</div>
+      </div>
+      <div class="review">
+        <p>Оформление бороды на уровне — впервые не пришлось ничего поправлять дома.</p>
+        <div class="name">— Игорь</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <div class="eyebrow">Запись</div>
+        <h2>Выберите время —<br>мы подтвердим за 5 минут</h2>
+        <p style="color:var(--muted);margin-top:16px;">Отвечаем в Telegram и по телефону с 9:00 до 21:00 без выходных.</p>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Демо-форма: заявка не отправляется по-настоящему.');">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="tel" placeholder="Телефон" required>
+        <input type="text" placeholder="Желаемая услуга">
+        <button type="submit" class="btn" style="border:none;cursor:pointer;margin-top:6px;">Отправить заявку</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div>СТАВ · Барбершоп · ул. Ленина, 14</div>
+    <div>+7 (999) 123-45-67 · @stav_barber</div>
+  </footer>
+</body>
+</html>
